@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Text,
     View,
@@ -16,15 +16,15 @@ class Featured extends Component {
         super(props);
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <NavigatorIOS
-                style= {styles.container}
+                style={styles.container}
                 initialRoute={{
-                    title:'推荐电影',
-                    component:MovieList
+                    title: '推荐电影',
+                    component: MovieList
                 }}
-                shadowHidden= {true}
+                shadowHidden={true}
                 barTintColor='darkslateblue'
                 titleTextColor='rgba(255,255,255,0.8)'
                 tintColor='rgba(255,255,255,0.8)'
@@ -34,4 +34,4 @@ class Featured extends Component {
     }
 }
 
-export { Featured as default };
+export {Featured as default};

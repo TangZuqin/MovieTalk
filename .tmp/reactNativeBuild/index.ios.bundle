@@ -69354,13 +69354,44 @@ var _Main=require(401 /* ../Styles/Main */);var _Main2=babelHelpers.interopRequi
 var _UserProfile=require(412 /* ./UserProfile */);var _UserProfile2=babelHelpers.interopRequireDefault(_UserProfile);var
 
 Login=function(_Component){babelHelpers.inherits(Login,_Component);
-function Login(props){babelHelpers.classCallCheck(this,Login);return babelHelpers.possibleConstructorReturn(this,(Login.__proto__||Object.getPrototypeOf(Login)).call(this,
+function Login(props){babelHelpers.classCallCheck(this,Login);var _this=babelHelpers.possibleConstructorReturn(this,(Login.__proto__||Object.getPrototypeOf(Login)).call(this,
 props));
+
+var api={
+key:'05b2e24806124f0f1118a6d81236ed2d',
+secret:'132f022db4330578'};
+
+
+
+var oAuth={
+authBaseUrl:'https://www.douban.com/service/auth2/auth',
+tokenBaseUrl:'https://www.douban.com/service/auth2/token',
+redirectUri:'http://ninghao.net',
+responseType:'code',
+grantType:'authorization_code',
+scope:'douban_basic_common,movie_basic,movie_basic_r,movie_basic_w'};
+
+
+_this.state={
+authCode:''};
+
+
+_this.authUrl=(oAuth.authBaseUrl+'\n            ?client_id='+
+api.key+'\n            &redirect_uri='+
+oAuth.redirectUri+'\n            &response_type='+
+oAuth.responseType+'\n            &scope='+
+oAuth.scope).replace(/(\r\n|\n|\r|)/gm,'');return _this;
 }babelHelpers.createClass(Login,[{key:'onNavigationStateChange',value:function onNavigationStateChange(
 
-state){
-console.log(state);
-}},{key:'render',value:function render()
+state){var code;return regeneratorRuntime.async(function onNavigationStateChange$(_context){while(1){switch(_context.prev=_context.next){case 0:if(!(
+state.url.includes('?code')&&state.navigationType===1)){_context.next=5;break;}
+code=state.url.split('code=')[1];_context.next=4;return regeneratorRuntime.awrap(
+this.setState({
+authCode:code}));case 4:
+
+console.log(this.state.authCode);case 5:case'end':return _context.stop();}}},null,this);}},{key:'render',value:function render()
+
+
 
 {
 return(
@@ -69369,7 +69400,7 @@ startInLoadingState:true,
 
 
 
-source:{uri:"https://ninghao.net"},
+source:{uri:this.authUrl},
 onNavigationStateChange:this.onNavigationStateChange.bind(this)}));
 
 

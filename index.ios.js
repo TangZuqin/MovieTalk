@@ -40,51 +40,51 @@ class MovieTalk extends Component {
             <TabBarIOS barTintColor="darkslateblue" tintColor="white">
                 <TabBarIOS.Item
 
-                    icon={{uri: icons.star,scale:4.6}}
+                    icon={{uri: icons.star, scale: 4.6}}
                     title="推荐电影"
-                    selectedIcon={{uri: icons.starActive,scale:4.6}}
-                    selected={this.state.selectedTab ==='featured'}
-                    onPress={()=>{
-                    this.setState({
-                        selectedTab:'featured'
-                    });
-                }}
+                    selectedIcon={{uri: icons.starActive, scale: 4.6}}
+                    selected={this.state.selectedTab === 'featured'}
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'featured'
+                        });
+                    }}
                 >
                     <Featured />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    icon={{uri:icons.board,scale:4.6}}
+                    icon={{uri: icons.board, scale: 4.6}}
                     title="在映电影"
-                    seletedIcon={{uri:icons.boardActive,scale:4.6}}
-                    selected={this.state.selectedTab ==='us_box'}
-                    onPress={()=>{
-                    this.setState({
-                        selectedTab:'us_box'
-                    });
-                }}
+                    seletedIcon={{uri: icons.boardActive, scale: 4.6}}
+                    selected={this.state.selectedTab === 'us_box'}
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'us_box'
+                        });
+                    }}
                 >
                     <USBox />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    icon={{uri:icons.search,scale:4.6}}
+                    icon={{uri: icons.search, scale: 4.6}}
                     title="搜索"
                     selected={this.state.selectedTab === 'search'}
-                    onPress={()=>{
-                  this.setState({
-                      selectedTab:'search'
-                  });
-                }}>
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'search'
+                        });
+                    }}>
                     <Search />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    icon={{uri:icons.user , scale: 4.6}}
+                    icon={{uri: icons.user, scale: 4.6}}
                     title="我的"
                     selected={this.state.selectedTab === 'user'}
                     onPress={() => {
-                    this.setState({
-                        selectedTab: 'user'
-                    });
-                }}>
+                        this.setState({
+                            selectedTab: 'user'
+                        });
+                    }}>
                     <User />
                 </TabBarIOS.Item>
             </TabBarIOS>

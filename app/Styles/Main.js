@@ -20,7 +20,7 @@ let styles = StyleSheet.create({
         borderColor: 'rgba(100, 53, 201, 0.1)',
         paddingBottom: 6,
         paddingTop: 6,
-        flex:1,
+        flex: 1,
     },
     itemContent: {
         flex: 1,
@@ -90,11 +90,11 @@ let styles = StyleSheet.create({
     list: {
         marginTop: 50,
     },
-    searchHeader:{
+    searchHeader: {
         color: 'rgba(0,0,0,0.8)',
         fontSize: 18,
         marginTop: 30,
-        marginLeft:10,
+        marginLeft: 10,
 
     },
 });
